@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<title>HUGE NavExercise</title>
+	<link rel="stylesheet" href="/styles/main.css">
+
+	<script type="text/html" id="home">  
+		<h1><%= home %></h1>
+	</script>  
+	
+	<script type="text/html" id="work">  
+		<h1>Page 1: <%= greeting %></h1>
+		<p><%= moreText %></p>
+	</script>  
+	
+	<script type="text/html" id="about">  
+		<h1>Page 2: <%= heading %></h1>
+		<p>Lorem ipsum...</p>
+	</script>
+</head>
+<body>
+
+	<nav id="menu"></nav>
+	<div id="view"></div>
+
+	<script type="text/javascript" src="/js/views/views.js"></script>
+	<script type="text/javascript" src="/js/router/router.js"></script>
+	<script type="text/javascript" src="/js/model/model.js"></script>
+	<script type="text/javascript" src="/js/app.js"></script>
+</body>
+</html>
