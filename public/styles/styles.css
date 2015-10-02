@@ -193,4 +193,68 @@ header {
 .spin {
   transform: rotate(180deg); }
 
+@media only screen and (min-width: 768px) {
+  #drawer-toggle, #drawer-toggle-label, header svg {
+    display: none; }
+
+  header {
+    height: 72px; }
+    header .huge {
+      transform: translateX(100px);
+      opacity: 0;
+      visibility: visible; }
+    header .huge:hover {
+      background-position: 0 -23px; }
+
+  #drawer {
+    position: fixed;
+    top: 0px;
+    left: 132px;
+    height: 72px;
+    width: 100%;
+    background: transparent;
+    overflow: visible;
+    -webkit-overflow-scrolling: touch;
+    z-index: 10; }
+    #drawer ul {
+      font-size: 1.5em; }
+      #drawer ul li {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        width: auto;
+        height: 72px; }
+      #drawer ul li:hover ul {
+        display: block;
+        position: absolute;
+        top: 72px;
+        left: 0px;
+        z-index: 11;
+        background: white;
+        width: 250px;
+        padding: 0 12px;
+        color: black;
+        padding: 0; }
+        #drawer ul li:hover ul li {
+          height: 48px;
+          display: block; }
+          #drawer ul li:hover ul li a {
+            color: black;
+            padding: 12px 24px;
+            height: 48px; }
+          #drawer ul li:hover ul li a:hover {
+            background: #EEEEEE;
+            color: #ec008c; }
+      #drawer ul li:first-child {
+        margin-top: 0px; }
+      #drawer ul a {
+        height: 72px;
+        color: white;
+        padding: 24px; }
+      #drawer ul a:hover {
+        background: white;
+        color: #ec008c; }
+      #drawer ul span {
+        display: none; } }
+
 /*# sourceMappingURL=styles.css.map */

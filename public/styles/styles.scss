@@ -6,6 +6,7 @@ $TranslucentBlack: rgba(0, 0, 0, 0.5);
 $bgHeight: 23px;
 $bgWidth: 50px;
 $bg: 50px 23px;
+$menuDesktopHeight: 72px;
 
 * {
   -webkit-box-sizing: border-box;
@@ -246,4 +247,97 @@ header {
 
 .spin {
   transform: rotate(180deg);
+}
+
+@media only screen and (min-width: 768px) {
+  #drawer-toggle, #drawer-toggle-label, header svg {
+    display: none;
+  }
+
+  header {
+    height: $menuDesktopHeight;
+
+    .huge {
+      transform: translateX(100px);
+      opacity: 0;
+      visibility: visible;
+    }
+
+    .huge:hover {
+      background-position: 0 ($bgHeight * -1);
+    }
+
+  }
+
+  #drawer {
+    position: fixed;
+    top: 0px;
+    left: 132px;
+    height: $menuDesktopHeight;
+    width: 100%;
+    background: transparent;
+    overflow: visible;
+    -webkit-overflow-scrolling: touch;
+    z-index: 10;
+
+    ul {
+      font-size: 1.5em;
+
+      li {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        width: auto;
+        height: $menuDesktopHeight;
+      }
+
+      li:hover {
+        ul {
+          display: block;
+          position: absolute;
+          top: 72px;
+          left: 0px;
+          z-index: 11;
+          background: white;
+          width: 250px;
+          padding: 0 12px;
+          color: black;
+          padding: 0;
+          li{
+            height: 48px;
+            display: block;
+            a {
+              color: black;
+              padding: 12px 24px;
+              height: 48px;
+            }
+
+            a:hover {
+              background: #EEEEEE;
+              color: $Magenta;
+            }
+          }
+        }
+      }
+
+      li:first-child {
+        margin-top: 0px;
+      }
+
+      a {
+        height: $menuDesktopHeight;
+        color: white;
+        padding: 24px;
+      }
+
+      a:hover {
+        background: white;
+        color: $Magenta;
+      }
+
+      span {
+        display: none;
+      }
+    }
+  }
 }
