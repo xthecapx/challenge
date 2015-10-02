@@ -1,26 +1,39 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>HUGE NavExercise</title>
 	<link rel="stylesheet" href="/styles/main.css">
+	<link rel="stylesheet" href="/styles/styles.css">
 
-	<script type="text/html" id="home">  
+	<script type="text/html" id="home">
+		<img src="<%= img %>" alt="">
 		<h1><%= home %></h1>
-	</script>  
-	
-	<script type="text/html" id="work">  
+		<p><%= content %></p>
+	</script>
+
+	<script type="text/html" id="work">
 		<h1>Page 1: <%= greeting %></h1>
 		<p><%= moreText %></p>
-	</script>  
-	
-	<script type="text/html" id="about">  
+	</script>
+
+	<script type="text/html" id="about">
 		<h1>Page 2: <%= heading %></h1>
 		<p>Lorem ipsum...</p>
 	</script>
 </head>
 <body>
+	<input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
+  <label for="drawer-toggle" id="drawer-toggle-label"></label>
+	<nav id="drawer"></nav>
 
-	<nav id="menu"></nav>
+	<header>
+		<a href="/"><div class="huge">Huge</div></a>
+		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="72px" height="72px" viewBox="0 0 72 72" enable-background="new 0 0 72 72" xml:space="preserve">
+				<polygon fill="#FFFFFF" points="38.854,35.977 45.9,28.929 43.071,26.1 35.975,33.196 28.758,26.227 25.979,29.104 33.146,36.025 26.101,43.07 28.93,45.899 36.024,38.805 43.243,45.775 46.021,42.898 "/>
+		</svg>
+	</header>
 	<div id="view"></div>
 
 	<script type="text/javascript" src="/js/views/views.js"></script>

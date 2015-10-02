@@ -13,7 +13,7 @@
 
 	function createMenu(menuItems) {
 		
-		var html = '';
+		var html = '<ul>';
 
 		for (var i = 0; i < menuItems.length; i++) {
 
@@ -31,7 +31,9 @@
 			}
 		}
 
-		document.getElementById("menu").innerHTML = html;
+		html += '</ul>'
+
+		document.getElementById("drawer").innerHTML = html;
 	};
 
 })();
