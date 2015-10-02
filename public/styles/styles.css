@@ -197,11 +197,14 @@ header {
   #drawer-toggle, #drawer-toggle-label, header svg {
     display: none; }
 
+  #view {
+    margin-top: 72px; }
+
   header {
     height: 72px; }
     header .huge {
       transform: translateX(100px);
-      opacity: 0;
+      opacity: 1;
       visibility: visible; }
     header .huge:hover {
       background-position: 0 -23px; }
