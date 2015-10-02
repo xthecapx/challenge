@@ -1,4 +1,6 @@
-(function(){
+// Credits: http://ejohn.org/blog/javascript-micro-templating/
+
+(function() {
   var cache = {};
  
   this.tmpl = function tmpl(str, data){
@@ -30,4 +32,4 @@
     // Provide some basic currying to the user
     return data ? fn( data ) : fn;
   };
-})();
+}());

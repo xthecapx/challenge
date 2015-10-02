@@ -14,6 +14,7 @@
 
 	function createMenu(menuItems) {
 
+		//Menu template
 		var html = '<ul>';
 
 		for (var i = 0; i < menuItems.length; i++) {
@@ -21,7 +22,7 @@
 			if(menuItems[i].items.length === 0) {
 				html += '<li><a href="' + menuItems[i].url + '">' + menuItems[i].label + '</a><span class="icon-keyboard_arrow_down" id="arrow'+ menuItems[i].label +'"></span></li>';
 			} else {
-				html += '<li><a href="' + menuItems[i].url + '">' + menuItems[i].label + '</a><span class="icon-keyboard_arrow_down" id="arrow'+ menuItems[i].label +'" onclick="toggle_visibility(\'subMenu'+ menuItems[i].label +'\', \'arrow' + menuItems[i].label + '\');"></span>';
+				html += '<li><a href="' + menuItems[i].url + '">' + menuItems[i].label + '</a><span class="icon-keyboard_arrow_down" id="arrow'+ menuItems[i].label +'" onclick="Controllers.toggle_visibility(\'subMenu'+ menuItems[i].label +'\', \'arrow' + menuItems[i].label + '\');"></span>';
 				html += '<ul id="subMenu' + menuItems[i].label +  '">';
 
 				for (var j = 0; j < menuItems[i].items.length; j++) {
@@ -34,6 +35,7 @@
 
 		html += '</ul>'
 
+		//Creating the Menu
 		document.getElementById("drawer").innerHTML = html;
 	};
 
