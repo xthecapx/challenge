@@ -19,7 +19,7 @@ $bg: 50px 23px;
   -webkit-text-size-adjust: none;
 }
 
-#drawer-toggle, header, #drawer, .huge {
+#drawer-toggle, header, #drawer, .huge, .icon-keyboard_arrow_down, svg {
   -webkit-transition: .25s ease-in-out;
   -moz-transition: .25s ease-in-out;
   -o-transition: .25s ease-in-out;
@@ -81,10 +81,14 @@ header {
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: 0 ($bgHeight * -2 - 2 );
-    display: none;
+    opacity: 0;
+    visibility: hidden;
     height: $bgHeight;
     width: $bgWidth;
     text-indent: -9999px;
+    float: left;
+    position: relative;
+    left: -100px;
   }
   svg {
     width: 50px;
@@ -92,7 +96,8 @@ header {
     position: absolute;
     top: 0;
     right: 0;
-    display: none;
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -117,7 +122,6 @@ header {
   background: white;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding: 20px;
   -webkit-overflow-scrolling: touch;
 
   ul {
@@ -126,18 +130,50 @@ header {
 
     li {
       list-style: none;
+      position: relative;
     }
+
+    li:first-child {
+      margin-top: 12px;
+    }
+
     a {
       width: 100%;
       height: 48px;
       display: block;
       text-decoration: none;
       color: black;
-      padding: 12px 0 0;
+      padding: 12px 0 12px 24px;
+    }
+
+    a:hover {
+      background: #EEEEEE;
     }
 
     ul {
       display: none;
+      font-family: Galaxie;
+      font-size: 0.6em;
+
+      li:first-child {
+        margin: 0;
+      }
+
+      a:hover {
+        color: $Magenta;
+      }
+    }
+
+    span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      font-size: 1.7em;
+      color: $Magenta;
+      width: 48px;
+      height: auto;
+      text-align: center;
     }
   }
 }
@@ -170,6 +206,7 @@ header {
 
 #drawer-toggle:checked {
   z-index: 100;
+  cursor: pointer;
 }
 
 #drawer-toggle:checked ~ #drawer-toggle-label {
@@ -187,7 +224,12 @@ header {
 }
 
 #drawer-toggle:checked ~ header .huge, #drawer-toggle:checked ~ header svg{
-  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+#drawer-toggle:checked ~ header .huge{
+  transform: translateX(100px);
 }
 
 #drawer-toggle:checked ~ header .huge:hover {
@@ -200,4 +242,8 @@ header {
 
 #drawer-toggle:checked ~ #page-content {
   margin-left: 300px;
+}
+
+.spin {
+  transform: rotate(180deg);
 }

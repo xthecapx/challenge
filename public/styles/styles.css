@@ -9,7 +9,7 @@
   padding: 0;
   -webkit-text-size-adjust: none; }
 
-#drawer-toggle, header, #drawer, .huge {
+#drawer-toggle, header, #drawer, .huge, .icon-keyboard_arrow_down, svg {
   -webkit-transition: .25s ease-in-out;
   -moz-transition: .25s ease-in-out;
   -o-transition: .25s ease-in-out;
@@ -65,17 +65,22 @@ header {
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: 0 -48px;
-    display: none;
+    opacity: 0;
+    visibility: hidden;
     height: 23px;
     width: 50px;
-    text-indent: -9999px; }
+    text-indent: -9999px;
+    float: left;
+    position: relative;
+    left: -100px; }
   header svg {
     width: 50px;
     height: auto;
     position: absolute;
     top: 0;
     right: 0;
-    display: none; }
+    opacity: 0;
+    visibility: hidden; }
 
 #drawer-toggle-label:before {
   content: '';
@@ -97,22 +102,42 @@ header {
   background: white;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding: 20px;
   -webkit-overflow-scrolling: touch; }
   #drawer ul {
     font-family: HUGEAvantGardeBold;
     font-size: 1.5em; }
     #drawer ul li {
-      list-style: none; }
+      list-style: none;
+      position: relative; }
+    #drawer ul li:first-child {
+      margin-top: 12px; }
     #drawer ul a {
       width: 100%;
       height: 48px;
       display: block;
       text-decoration: none;
       color: black;
-      padding: 12px 0 0; }
+      padding: 12px 0 12px 24px; }
+    #drawer ul a:hover {
+      background: #EEEEEE; }
     #drawer ul ul {
-      display: none; }
+      display: none;
+      font-family: Galaxie;
+      font-size: 0.6em; }
+      #drawer ul ul li:first-child {
+        margin: 0; }
+      #drawer ul ul a:hover {
+        color: #ec008c; }
+    #drawer ul span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      font-size: 1.7em;
+      color: #ec008c;
+      width: 48px;
+      height: auto;
+      text-align: center; }
 
 #view {
   margin-left: 0px;
@@ -134,7 +159,8 @@ header {
     margin: 0 24px; }
 
 #drawer-toggle:checked {
-  z-index: 100; }
+  z-index: 100;
+  cursor: pointer; }
 
 #drawer-toggle:checked ~ #drawer-toggle-label {
   height: 100%;
@@ -149,7 +175,11 @@ header {
   box-shadow: none; }
 
 #drawer-toggle:checked ~ header .huge, #drawer-toggle:checked ~ header svg {
-  display: block; }
+  opacity: 1;
+  visibility: visible; }
+
+#drawer-toggle:checked ~ header .huge {
+  transform: translateX(100px); }
 
 #drawer-toggle:checked ~ header .huge:hover {
   background-position: 0 -23px; }
@@ -159,5 +189,8 @@ header {
 
 #drawer-toggle:checked ~ #page-content {
   margin-left: 300px; }
+
+.spin {
+  transform: rotate(180deg); }
 
 /*# sourceMappingURL=styles.css.map */
