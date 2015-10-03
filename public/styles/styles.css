@@ -4,7 +4,6 @@
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  /* adds animation for all transitions */
   margin: 0;
   padding: 0;
   -webkit-text-size-adjust: none; }
@@ -32,6 +31,9 @@ p {
   font-family: Galaxie;
   margin: 0 24px;
   text-align: justify; }
+
+.outer {
+  position: relative; }
 
 #drawer-toggle {
   position: absolute;
@@ -146,6 +148,15 @@ header {
       width: 48px;
       height: auto;
       text-align: center; }
+  #drawer footer {
+    position: initial;
+    z-index: 10;
+    font-size: 0.8em;
+    height: 48px;
+    width: 100%;
+    padding: 17px 24px;
+    font-family: Arial;
+    margin-top: 74%; }
 
 #view {
   margin-left: 0px;
@@ -195,8 +206,21 @@ header {
   transform: rotate(180deg); }
 
 @media only screen and (min-width: 768px) {
-  #drawer-toggle, #drawer-toggle-label, header svg {
+  #drawer-toggle, #drawer-toggle-label, header svg, #drawer footer {
     display: none; }
+
+  #drawer-toggle:checked ~ #drawer-toggle-label {
+    display: block;
+    position: absolute;
+    height: calc(100% - 72px);
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    left: 0;
+    top: 72px;
+    margin: 0; }
+
+  #drawer-toggle:checked ~ #drawer {
+    left: 132px; }
 
   h1 {
     position: absolute;
@@ -262,10 +286,10 @@ header {
         left: 0px;
         z-index: 11;
         background: white;
-        width: 250px;
+        width: 210px;
         padding: 0 12px;
         color: black;
-        padding: 0; }
+        padding: 12px 0; }
         #drawer ul li:hover ul li {
           height: 48px;
           display: block; }

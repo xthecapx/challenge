@@ -3,6 +3,7 @@ var App = (function() {
         Start: function (){
             console.log('App Starting!');
             Router.init();
+            Model.fetch('nav.json');
         }
     }
 }());

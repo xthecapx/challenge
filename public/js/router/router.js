@@ -1,7 +1,8 @@
-// Credits: https://gist.github.com/joakimbeng/7918297
+// Router system
 
 var Router = {
     routes: {
+        //Default values
         '/': {
             controller: function() {
                 this.home = 'Get paid for giving a shit';
@@ -29,7 +30,7 @@ var Router = {
         }
         this.routes[path] = {templateId: templateId, controller: controller};
     },
-    
+
     router: function () {
         // Current route url (getting rid of '#' in hash as well):
         var url = location.hash.slice(1) || '/';
@@ -37,7 +38,7 @@ var Router = {
 
         if (!route) {
             console.log('Not found');
-            route = Router.routes['underConstruction'];            
+            route = Router.routes['underConstruction'];
         }
 
         // Initiate the controller
@@ -49,7 +50,7 @@ var Router = {
             Object.unobserve(Router.current.controller, Router.current.render);
             Router.current = null;
         }
-        
+
         // Getting div.view to render
         var el = document.getElementById('view');
 
