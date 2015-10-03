@@ -23,7 +23,15 @@ body {
   font-family: Galaxie; }
 
 h1 {
-  font-family: HUGEAvantGardeBold; }
+  font-family: HUGEAvantGardeBold;
+  padding: 50px 24px;
+  font-size: 3em;
+  line-height: 1.1; }
+
+p {
+  font-family: Galaxie;
+  margin: 0 24px;
+  text-align: justify; }
 
 #drawer-toggle {
   position: absolute;
@@ -150,13 +158,6 @@ header {
   #view img {
     width: 100%;
     height: auto; }
-  #view h1 {
-    padding: 50px 24px;
-    font-size: 3em;
-    line-height: 1.1; }
-  #view p {
-    font-family: Galaxie;
-    margin: 0 24px; }
 
 #drawer-toggle:checked {
   z-index: 100;
@@ -197,17 +198,44 @@ header {
   #drawer-toggle, #drawer-toggle-label, header svg {
     display: none; }
 
+  h1 {
+    position: absolute;
+    top: -moz-calc(50% - 72px);
+    top: calc(50% - 83px);
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-family: HUGEAvantGardeBold;
+    letter-spacing: -0.06em;
+    text-align: center;
+    color: white;
+    font-size: 5.6em;
+    width: 77%; }
+    h1.content {
+      position: inherit;
+      color: black;
+      top: 26%; }
+
+  p {
+    margin: 35px 15% 0; }
+
   #view {
-    margin-top: 72px; }
+    margin-top: 72px;
+    position: relative; }
 
   header {
     height: 72px; }
     header .huge {
       transform: translateX(100px);
       opacity: 1;
-      visibility: visible; }
+      visibility: visible;
+      height: 28px;
+      width: 60px;
+      background-position: 0 -58px;
+      margin-top: 7px; }
     header .huge:hover {
-      background-position: 0 -23px; }
+      background-position: 0 -28px; }
 
   #drawer {
     position: fixed;
@@ -254,6 +282,9 @@ header {
         height: 72px;
         color: white;
         padding: 24px; }
+        #drawer ul a.overDesktop {
+          background: white;
+          color: #ec008c; }
       #drawer ul a:hover {
         background: white;
         color: #ec008c; }

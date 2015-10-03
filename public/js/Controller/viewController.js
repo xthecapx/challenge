@@ -8,9 +8,17 @@ var Controllers = {
 			e.style.display = 'none';
 			arrow.classList.remove('spin');
 		} else {
-		    e.style.display = 'block';
-		    arrow.classList.add('spin');
+        e.style.display = 'block';
+        arrow.classList.add('spin');
 		}
-	}
+	},
+
+  mouseIn: function (el) {
+    el.firstChild.classList.add('overDesktop');
+  },
+
+  mouseOut: function(el) {
+    el.firstChild.classList.remove('overDesktop');
+  }
 }
 

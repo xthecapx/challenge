@@ -6,6 +6,8 @@ $TranslucentBlack: rgba(0, 0, 0, 0.5);
 $bgHeight: 23px;
 $bgWidth: 50px;
 $bg: 50px 23px;
+$bgHeightDesktop: 28px;
+$bgWidthDesktop: 60px;
 $menuDesktopHeight: 72px;
 
 * {
@@ -37,6 +39,15 @@ body {
 
 h1 {
   font-family: HUGEAvantGardeBold;
+  padding: 50px 24px;
+  font-size: 3em;
+  line-height: 1.1;
+}
+
+p {
+  font-family: Galaxie;
+  margin: 0 24px;
+  text-align: justify;
 }
 
 #drawer-toggle {
@@ -192,17 +203,6 @@ header {
     width: 100%;
     height: auto;
   }
-
-  h1 {
-    padding: 50px 24px;
-    font-size: 3em;
-    line-height: 1.1;
-  }
-
-  p {
-    font-family: Galaxie;
-    margin: 0 24px;
-  }
 }
 
 #drawer-toggle:checked {
@@ -249,13 +249,44 @@ header {
   transform: rotate(180deg);
 }
 
+.overDesktop {
+
+}
+
 @media only screen and (min-width: 768px) {
   #drawer-toggle, #drawer-toggle-label, header svg {
     display: none;
   }
 
+  h1 {
+    position: absolute;
+    top: -moz-calc(50% - 72px);
+    top: calc(50% - 83px);
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-family: HUGEAvantGardeBold;
+    letter-spacing: -0.06em;
+    text-align: center;
+    color: white;
+    font-size: 5.6em;
+    width: 77%;
+
+    &.content {
+      position: inherit;
+      color: black;
+      top: 26%;
+    }
+  }
+
+  p {
+    margin: 35px 15% 0;
+  }
+
   #view {
     margin-top: $menuDesktopHeight;
+    position: relative;
   }
 
   header {
@@ -265,10 +296,14 @@ header {
       transform: translateX(100px);
       opacity: 1;
       visibility: visible;
+      height: 28px;
+      width: 60px;
+      background-position: 0 -58px;
+      margin-top: 7px;
     }
 
     .huge:hover {
-      background-position: 0 ($bgHeight * -1);
+      background-position: 0 ($bgHeightDesktop * -1);
     }
 
   }
@@ -332,6 +367,11 @@ header {
         height: $menuDesktopHeight;
         color: white;
         padding: 24px;
+
+        &.overDesktop {
+          background: white;
+          color: $Magenta;
+        }
       }
 
       a:hover {

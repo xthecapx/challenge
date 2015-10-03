@@ -15,14 +15,14 @@
 	function createMenu(menuItems) {
 
 		//Menu template
-		var html = '<ul>';
+		var html = '<ul id="ulMenu">';
 
 		for (var i = 0; i < menuItems.length; i++) {
 
 			if(menuItems[i].items.length === 0) {
-				html += '<li><a href="' + menuItems[i].url + '">' + menuItems[i].label + '</a><span class="icon-keyboard_arrow_down" id="arrow'+ menuItems[i].label +'"></span></li>';
+				html += '<li onmouseout="Controllers.mouseOut(this);" onmouseenter="Controllers.mouseIn(this);" onmouseover="Controllers.mouseIn(this);"><a href="' + menuItems[i].url + '" class="">' + menuItems[i].label + '</a><span class="icon-keyboard_arrow_down" id="arrow'+ menuItems[i].label +'"></span></li>';
 			} else {
-				html += '<li><a href="' + menuItems[i].url + '">' + menuItems[i].label + '</a><span class="icon-keyboard_arrow_down" id="arrow'+ menuItems[i].label +'" onclick="Controllers.toggle_visibility(\'subMenu'+ menuItems[i].label +'\', \'arrow' + menuItems[i].label + '\');"></span>';
+				html += '<li onmouseout="Controllers.mouseOut(this);" onmouseenter="Controllers.mouseIn(this);" onmouseover="Controllers.mouseIn(this);"><a href="' + menuItems[i].url + '" class="">' + menuItems[i].label + '</a><span class="icon-keyboard_arrow_down" id="arrow'+ menuItems[i].label +'" onclick="Controllers.toggle_visibility(\'subMenu'+ menuItems[i].label +'\', \'arrow' + menuItems[i].label + '\');"></span>';
 				html += '<ul id="subMenu' + menuItems[i].label +  '">';
 
 				for (var j = 0; j < menuItems[i].items.length; j++) {
